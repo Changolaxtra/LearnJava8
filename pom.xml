@@ -20,11 +20,6 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-base</artifactId>
-            <version>19-ea+5</version>
-        </dependency>
     </dependencies>
 
     <build>
