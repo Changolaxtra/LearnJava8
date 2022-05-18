@@ -32,6 +32,8 @@ public class Java7ParallelAggregator implements Aggregator {
 
   @Override
   public List<Pair<String, Long>> getMostFrequentWords(List<String> words, long limit) {
+    //After implement this method using FJP, I'm no sure if it is useful to split the work in parallel processing,
+    // looks like I'm adding a lot of overhead.
     List<Pair<String, Long>> resultList = new ArrayList<>();
     try {
       final ForkJoinPool forkJoinPool = new ForkJoinPool(4);
@@ -51,6 +53,8 @@ public class Java7ParallelAggregator implements Aggregator {
 
   @Override
   public List<String> getDuplicates(List<String> words, long limit) {
+    // Based on the comment of the previous method, I don't feel FJP useful for this case,
+    // talking about Java 8 is easy to add parallel processing to the streams but not sure if worth it 
     throw new UnsupportedOperationException();
   }
 }
